@@ -36,15 +36,17 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <NavLink to="/" className={linkClassName}>
-          Inicio
-        </NavLink>
-        <NavLink to="/gallery" className={linkClassName}>
-          Galería
-        </NavLink>
-        <NavLink to="/contact" className={linkClassName}>
-          Contacto
-        </NavLink>
+        <nav>
+          <NavLink to="/" className={linkClassName}>
+            Inicio
+          </NavLink>
+          <NavLink to="/gallery" className={linkClassName}>
+            Galería
+          </NavLink>
+          <NavLink to="/contact" className={linkClassName}>
+            Contacto
+          </NavLink>
+        </nav>
         {children}
         <ScrollRestoration />
         <Scripts />
