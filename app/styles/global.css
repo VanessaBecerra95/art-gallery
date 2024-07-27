@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+a.active {
+  color: #cd010b;
+}
+
