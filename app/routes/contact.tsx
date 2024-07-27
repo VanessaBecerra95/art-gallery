@@ -67,11 +67,9 @@ export default function Contact() {
             Enviar
           </button>
         </form>
-        <address className="mt-8">
-          Dirección: Calle random #123
-          <br />
-          Teléfono: +56 9 1234 5678
-        </address>
+        <footer className="bg-zinc-50 text-center dark:bg-neutral-700 lg:text-left">
+          <div className="bg-black/5 p-4 text-center text-surface dark:text-white">Dirección: Calle random #123 Teléfono: +56 9 1234 5678</div>
+        </footer>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art1.jpg"
-            alt="Sunset in the mountains"
+            alt="butterfly and woman"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Butterfly</div>
@@ -43,7 +43,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art2.jpg"
-            alt="Sunset in the mountains"
+            alt="statue of woman with soda"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Soda</div>
@@ -70,7 +70,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art3.jpg"
-            alt="Sunset in the mountains"
+            alt="man with colorful background"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Colorful</div>
@@ -97,7 +97,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art4.jpg"
-            alt="Sunset in the mountains"
+            alt="cicles and colors"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Circles</div>
@@ -123,7 +123,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art5.jpg"
-            alt="Sunset in the mountains"
+            alt="woman painting black"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Black</div>
@@ -150,7 +150,7 @@ export default function Gallery() {
           <img
             className="w-full h-96 object-cover"
             src="public/images/art6.jpg"
-            alt="Sunset in the mountains"
+            alt="colorful random art"
           />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">Random</div>
