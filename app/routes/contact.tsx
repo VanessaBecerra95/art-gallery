@@ -59,6 +59,7 @@ export default function Contact() {
             name="message"
             rows={5}
             className="w-full border border-gray-300 rounded p-2"
+            required
           />
           <button
             type="submit"
@@ -68,7 +69,9 @@ export default function Contact() {
           </button>
         </form>
         <footer className="bg-zinc-50 text-center dark:bg-neutral-700 lg:text-left">
-          <div className="bg-black/5 p-4 text-center text-surface dark:text-white">Dirección: Calle random #123 Teléfono: +56 9 1234 5678</div>
+          <div className="bg-black/5 p-4 text-center text-surface dark:text-white">
+            Dirección: Calle random #123 Teléfono: +56 9 1234 5678
+          </div>
         </footer>
       </div>
     </div>

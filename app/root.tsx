@@ -6,7 +6,6 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import "./tailwind.css";
-import globalStyles from "~/styles/global.css";
 import { NavLink } from "@remix-run/react";
 
 export function Layout({ children }: { readonly children: React.ReactNode }) {
@@ -31,12 +30,11 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href={globalStyles} />
         <Meta />
         <Links />
       </head>
       <body>
-        <nav>
+        <nav className="flex p-8 space-x-4">
           <NavLink to="/" className={linkClassName}>
             Inicio
           </NavLink>
