@@ -15,7 +15,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art1.jpg"
+            src="public/images/art1.webp"
             alt="butterfly and woman"
           />
           <div className="px-6 py-4">
@@ -42,7 +42,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art2.jpg"
+            src="public/images/art2.webp"
             alt="statue of woman with soda"
           />
           <div className="px-6 py-4">
@@ -69,7 +69,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art3.jpg"
+            src="public/images/art3.webp"
             alt="man with colorful background"
           />
           <div className="px-6 py-4">
@@ -96,7 +96,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art4.jpg"
+            src="public/images/art4.webp"
             alt="cicles and colors"
           />
           <div className="px-6 py-4">
@@ -122,7 +122,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art5.jpg"
+            src="public/images/art5.webp"
             alt="woman painting black"
           />
           <div className="px-6 py-4">
@@ -149,7 +149,7 @@ export default function Gallery() {
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
             className="w-full h-96 object-cover"
-            src="public/images/art6.jpg"
+            src="public/images/art6.webp"
             alt="colorful random art"
           />
           <div className="px-6 py-4">
