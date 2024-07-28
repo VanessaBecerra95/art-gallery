@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 export default function Gallery() {
   return (
     <div className="font-sans p-4">
-      <h1 className="text-3xl">Bienvenidos a la Galería de Arte</h1>
+      <h1 className="text-3xl">Algunas muestras de la galería</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 p-4 md:max-w-[1200px] place-items-center">
         <div className="max-w-sm rounded overflow-hidden shadow-lg">
           <img
@@ -153,7 +153,7 @@ export default function Gallery() {
             alt="colorful random art"
           />
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">Random</div>
+            <div className="font-bold text-xl mb-2">Flowers</div>
             <p className="text-gray-700 text-base">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Voluptatibus quia, nulla! Maiores et perferendis eaque,
@@ -168,7 +168,7 @@ export default function Gallery() {
               #art
             </span>
             <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              #random
+              #flowers
             </span>
           </div>
         </div>
