@@ -9,71 +9,63 @@ export const meta: MetaFunction = () => {
 
 export default function Contact() {
   return (
-    <div className="font-sans p-4">
-      <h1 className="text-3xl">Formulario de contacto</h1>
-      <div>
-        <p>
+    <main className="main-container">
+      <div className="contact-form-container">
+        <h1 className="contact-form-title">Formulario de contacto</h1>
+        <p className="contact-form-text">
           ¿Tienes alguna pregunta o comentario? ¡Nos encantaría saber de ti! Por
           favor, completa el siguiente formulario y te responderemos a la
           brevedad.
         </p>
-        <form className="mt-4 md:w-1/2">
-          <label htmlFor="name" className="block">
+        <form className="contact-form">
+          <label htmlFor="name" className="contact-form-label">
             Nombre Completo:
           </label>
           <input
             type="text"
             id="name"
             name="name"
-            className="w-full border border-gray-300 rounded p-2"
+            className="contact-form-input"
             required
           />
-          <label htmlFor="email" className="block mt-4">
+          <label htmlFor="email" className="contact-form-label">
             Correo electrónico:
           </label>
           <input
             type="email"
             id="email"
             name="email"
-            className="w-full border border-gray-300 rounded p-2"
+            className="contact-form-input"
             required
           />
-          <label htmlFor="requestType" className="block mt-4">
+          <label htmlFor="requestType" className="contact-form-label">
             Tipo de solicitud:
           </label>
           <select
             id="requestType"
             name="requestType"
-            className="w-full border border-gray-300 rounded p-2"
+            className="contact-form-select"
             required
           >
             <option value="purchase">Compra</option>
             <option value="inquiry">Consulta</option>
             <option value="sale">Venta</option>
           </select>
-          <label htmlFor="message" className="block mt-4">
+          <label htmlFor="message" className="contact-form-label">
             Mensaje:
           </label>
           <textarea
             id="message"
             name="message"
             rows={5}
-            className="w-full border border-gray-300 rounded p-2"
+            className="contact-form-textarea"
             required
           />
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-          >
+          <button type="submit" className="contact-form-button">
             Enviar
           </button>
         </form>
-        <footer className="bg-zinc-50 text-center dark:bg-neutral-700 lg:text-left">
-          <div className="bg-black/5 p-4 text-center text-surface dark:text-white">
-            Dirección: Calle random #123 Teléfono: +56 9 1234 5678
-          </div>
-        </footer>
       </div>
-    </div>
+    </main>
   );
 }

@@ -5,26 +5,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import styles from "~/styles/main.css?url";
 import "./tailwind.css";
-import { NavLink } from "@remix-run/react";
+import { Nav } from "./routes/nav";
+import { Footer } from "./routes/footer";
+import type { LinksFunction } from "@remix-run/node";
 
 export function Layout({ children }: { readonly children: React.ReactNode }) {
-  const linkClassName = ({
-    isActive,
-    isPending,
-  }: {
-    isActive: boolean;
-    isPending: boolean;
-  }) => {
-    if (isPending) {
-      return "pending";
-    } else if (isActive) {
-      return "active";
-    } else {
-      return "";
-    }
-  };
-
   return (
     <html lang="es">
       <head>
@@ -34,24 +21,22 @@ export function Layout({ children }: { readonly children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <nav className="flex p-8 space-x-4">
-          <NavLink to="/" className={linkClassName}>
-            Inicio
-          </NavLink>
-          <NavLink to="/gallery" className={linkClassName}>
-            Galería
-          </NavLink>
-          <NavLink to="/contact" className={linkClassName}>
-            Contacto
-          </NavLink>
-        </nav>
+        <Nav />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
 }
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: styles },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap",
+  },
+];
 
 export default function App() {
   return <Outlet />;
