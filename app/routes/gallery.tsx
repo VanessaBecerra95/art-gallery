@@ -11,7 +11,7 @@ export default function Gallery() {
   return (
     <main className="main-container">
       <div className="gallery-container">
-        <h1 className="text-4xl font-bold leading-tight mb-5 capitalize p-10 text-center">
+        <h1 className="title-gallery text-4xl font-bold leading-tight mb-5 capitalize p-10 text-center">
           Algunas muestras de la galería
         </h1>
         <div className="grid gap-10 m-10 mx-auto sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:max-w-screen-2xl p-4  place-items-center">

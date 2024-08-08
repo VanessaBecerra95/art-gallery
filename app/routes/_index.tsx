@@ -15,8 +15,9 @@ export default function Index() {
         <div className="lg:flex justify-between items-center">
           <div className="lg:w-6/12 lg:p-0 p-7">
             <h1 className="text-4xl font-bold leading-tight mb-5 capitalize">
-              Bienvenidos a la Galería de Arte
+              Bienvenidos a la Galería de <mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">Arte</mark>
             </h1>
+            
             <p className="text-xl">
               Bienvenidos a nuestra galería de arte en línea, un espacio
               dedicado a la exposición de obras únicas y cautivadoras de
@@ -33,7 +34,7 @@ export default function Index() {
             <div className="py-5">
               <a
                 href="/gallery"
-                className="text-white rounded-full py-2 px-5 text-lg font-semibold bg-purple-600 inline-block border border-purple-600 mr-3"
+                className="text-white rounded-full py-2 px-5 text-lg font-semibold bg-blue-500 inline-block mr-3"
               >
                 Galería
               </a>
@@ -49,7 +50,7 @@ export default function Index() {
             <img
               src="/images/hero.webp"
               alt="Greek woman statue"
-              className="rounded"
+              className="image-hero rounded-lg border-8 border-slate-50 shadow-2xl"
             />
           </div>
         </div>

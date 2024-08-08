@@ -21,6 +21,33 @@ h1 {
   background-color: #f3f4f6;
 }
 
+.image-hero {
+  transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-hero:hover {
+  transform: scale(1.1) perspective(1040px) rotateY(0deg) rotateX(0deg) rotate(0deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.title-gallery{
+  --c:linear-gradient(#000 0 0); 
+  
+  padding-bottom: .15em;
+  background: var(--c), var(--c);
+  background-size: .3em .1em;
+  background-position:50% 100%;
+  background-repeat: no-repeat;
+  transition: .3s linear, background-size .3s .2s linear;
+}
+
+.title-gallery:hover {
+  background-size: 40% .1em;
+  background-position: 10% 100%, 90% 100%;
+}
+
+
 .gallery-container {
   max-width: 1400px;
   width: 100%;

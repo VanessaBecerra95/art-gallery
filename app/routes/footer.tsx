@@ -64,8 +64,8 @@ export const Footer = () => {
         </div>
   
         <div className="w-full bg-black/5 p-4 text-center">
-          © 2024 Copyright:
-          <a href="https://tw-elements.com/">Galería</a>
+          © 2024 Copyright: 
+          <a href="https://tw-elements.com/"> Galería de Arte</a>
         </div>
       </footer>
     );
