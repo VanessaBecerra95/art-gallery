@@ -8,7 +8,7 @@ Install dependencies:
 
 ```shellscript
 npm install
-``
+```
 
 Run the dev server:
 
