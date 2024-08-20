@@ -1,6 +1,16 @@
-import type { MetaFunction } from "@remix-run/node";
+import { useState } from "react";
+import ImageModal from "~/components/ImageModal";
 
-export const meta: MetaFunction = () => {
+interface Image {
+  id: string;
+  url: string;
+  title: string;
+  description: string;
+  author: string;
+  year: number;
+}
+
+export const meta = () => {
   return [
     { title: "Galería de arte" },
     { name: "description", content: "Bienvenidos a nuestra galería" },
@@ -8,223 +18,133 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Gallery() {
-  return (
-    <main className="main-container">
-      <div className="gallery-container">
-        <h1 className="title-gallery text-4xl font-bold leading-tight mb-5 capitalize p-10 text-center">
-          Algunas muestras de la galería
-        </h1>
-        <div className="grid gap-10 m-10 mx-auto sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:max-w-screen-2xl p-4  place-items-center">
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art1.webp"
-              alt="butterfly and woman"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Butterfly</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #butterfly
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #spring
-              </span>
-            </div>
-          </div>
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [images, setImages] = useState<Image[]>([
+    {
+      id: "1",
+      url: "/images/art1.webp",
+      title: "Butterfly",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Pablo Picasso",
+      year: 2022,
+    },
+    {
+      id: "2",
+      url: "/images/art2.webp",
+      title: "Soda",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Frida Kahlo",
+      year: 2023,
+    },
+    {
+      id: "3",
+      url: "/images/art3.webp",
+      title: "Colorful",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Vincent van Gogh",
+      year: 2022,
+    },
+    {
+      id: "4",
+      url: "/images/art4.webp",
+      title: "Circles",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Leonardo da Vinci",
+      year: 2024,
+    },
+    {
+      id: "5",
+      url: "/images/art5.webp",
+      title: "Black",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Georgia O'Keeffe",
+      year: 2017,
+    },
+    {
+      id: "6",
+      url: "/images/art6.webp",
+      title: "Flowers",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Yayoi Kusama",
+      year: 2012,
+    },
+    {
+      id: "7",
+      url: "/images/art7.webp",
+      title: "Wonderful",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Kandinsky",
+      year: 2015,
+    },
+    {
+      id: "8",
+      url: "/images/art8.webp",
+      title: "Adonis",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
+      author: "Damien Hirst",
+      year: 2018,
+    },
+  ]);
 
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art2.webp"
-              alt="statue of woman with soda"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Soda</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #soda
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #woman
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-            </div>
-          </div>
+  const openModal = (image: Image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
 
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art3.webp"
-              alt="man with colorful background"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Colorful</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #boy
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #colorful
-              </span>
-            </div>
-          </div>
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
 
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art4.webp"
-              alt="cicles and colors"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Circles</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #circles
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #colors
-              </span>
-            </div>
-          </div>
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art5.webp"
-              alt="woman painting black"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Black</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #woman
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #colorful
-              </span>
-            </div>
-          </div>
+  const deleteImage = (imageId: string) => {
+    setImages(images.filter((image) => image.id !== imageId));
+  };
 
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art6.webp"
-              alt="colorful random art"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Flowers</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #colorful
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #flowers
-              </span>
-            </div>
-          </div>
-
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art7.webp"
-              alt="woman and sunflower"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Wonderful</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #sunflower
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #art
-              </span>
-            </div>
-          </div>
-
-          <div className="max-w-sm rounded overflow-hidden shadow-lg hover:scale-105">
-            <img
-              className="w-full h-96 object-cover"
-              src="/images/art8.webp"
-              alt="statue greek adonis"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Adonis</div>
-              <p className="text-gray-700 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                exercitationem praesentium nihil.
-              </p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #Statue
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #Greek
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+  return (  
+    <main className="main-container">  
+      <h1 className="title-gallery text-4xl font-bold leading-tight mb-5 capitalize p-10 text-center">  
+        Algunas muestras de la galería  
+      </h1>  
+      <div className="grid gap-10 m-10 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:max-w-screen-2xl p-4 place-items-center">  
+        {images.map((image) => (  
+          <div key={image.id} className="max-w-sm rounded overflow-hidden shadow-lg">  
+            <button  
+              className="w-full h-96 hover:scale-105 cursor-pointer"  
+              onClick={() => openModal(image)}  
+              onKeyDown={(e) => {  
+                if (e.key === "Enter" || e.key === " ") {  
+                  openModal(image);  
+                }  
+              }}  
+              style={{ background: `url(${image.url})`, backgroundSize: 'cover' }}  
+              aria-label={`Abrir ${image.title}`}
+            />  
+            <div className="px-6 py-4">  
+              <div className="font-bold text-xl mb-2">{image.title}</div>  
+              <p className="text-gray-700 text-base">{image.description}</p>  
+            </div>  
+          </div>  
+        ))}  
+      </div>  
+  
+      <ImageModal  
+        isOpen={isModalOpen}  
+        onClose={closeModal}  
+        image={selectedImage}  
+        onDelete={(imageId) => {  
+          deleteImage(imageId);  
+          closeModal();  
+        }}  
+      />  
+    </main>  
   );
 }
